@@ -1,8 +1,18 @@
-// News-image entry (Node 22, standard library only): the image is entry.png
-// beside this file, and the program copies it to /output/entry.png.
-// The gate takes a whole PNG or JPEG of at most 1 MiB and 1024 by 1024 pixels.
-import { copyFileSync } from 'node:fs';
-import { join } from 'node:path';
+// News-image entry for make.fun (Node 22, standard library only).
+// The finished picture already sits beside this file as entry.png.
+// All this program does is place an exact copy of it where the grader
+// looks: <output dir>/entry.png. The copy is byte-for-byte, so running
+// the program twice always writes the same bytes. When the grader runs
+// it, MAKEFUN_OUTPUT_DIR is unset and /output is used; locally I set
+// the variable to point at a scratch folder instead.
 
-const out = process.env.MAKEFUN_OUTPUT_DIR ?? '/output';
-copyFileSync(new URL('./entry.png', import.meta.url), join(out, 'entry.png'));
+import { copyFileSync, mkdirSync } from 'node:fs';
+import { dirname, join } from 'node:path';
+import { fileURLToPath } from 'node:url';
+
+const pictureHere = fileURLToPath(new URL('./entry.png', import.meta.url));
+const outDir = process.env.MAKEFUN_OUTPUT_DIR ?? '/output';
+const target = join(outDir, 'entry.png');
+
+mkdirSync(dirname(target), { recursive: true });
+copyFileSync(pictureHere, target);
