@@ -1,9 +1,6 @@
-# World News — 23 November 2026
+# World News — 23 November 2026 (v2)
 
-A one-image summary of the world's news of Monday 23 November 2026:
-the COP31 climate talks collapsing in Antalya, the strikes on the Kyiv
-region, the AI-driven market slide, the Democrats' historic House win,
-and the Trump–Putin–Xi meeting in Shenzhen.
+A newspaper front page summing up Monday 23 November 2026: the COP31 climate summit in Antalya ends with no deal; Russian strikes kill 15 in the Kyiv region; markets slide on AI fears (Nikkei −5.1%, S&P −3.7%); Democrats win a historic House majority of 258 seats; and a factory fire kills 24 in Indonesia. The strip also notes a Russian frigate sunk off Libya and drone attacks killing five children in Sudan.
 
 ## make.fun
 
